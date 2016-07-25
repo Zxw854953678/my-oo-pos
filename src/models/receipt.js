@@ -6,8 +6,20 @@ class Receipt {
     this.savedTotal = savedTotal;
   }
 
+  static buildReceipt (receiptItems){
+    let total = 0;
+    let savedTotal = 0;
+
+    for (const receiptItem of receiptItems) {
+      total += receiptItem.subtotal;
+      savedTotal += receiptItem.saved;
+    }
+
+    return new Receipt(receiptItems, total, savedTotal);
+  };
+
   static  buildReceiptText(receipt) {
-    const formatMoney=(money) =>{
+    const formatMoney = (money) => {
       return money.toFixed(2);
     };
 
