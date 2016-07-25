@@ -6,4 +6,5 @@ class Receipt {
     this.savedTotal = savedTotal;
   }
 }
+
 module.exports = Receipt;
