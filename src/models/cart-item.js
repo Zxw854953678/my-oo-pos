@@ -26,11 +26,9 @@ class CartItem {
   }
 
   static buildCartItems(tags, allItems) {
-
     const cartItems = [];
 
     for (const tag of tags) {
-
       const tagArray = tag.split('-');
       const barcode = tagArray[0];
       const count = parseFloat(tagArray[1] || 1);
